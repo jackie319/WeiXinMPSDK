@@ -1,7 +1,7 @@
 ﻿#region Apache License Version 2.0
 /*----------------------------------------------------------------
 
-Copyright 2017 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
+Copyright 2018 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
 except in compliance with the License. You may obtain a copy of the License at
@@ -24,7 +24,8 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Senparc.Weixin.Context;
+using Senparc.NeuChar.Context;
+using Senparc.NeuChar.Entities;
 using Senparc.Weixin.MP.Entities;
 using Senparc.Weixin.MP.MessageHandlers;
 using Senparc.Weixin.MP.Test.MessageHandlers;
@@ -51,7 +52,7 @@ namespace Senparc.Weixin.MP.Test.Context
             var maxRecordCount = 1;
             for (int i = 0; i < 100; i++)
             {
-                var messageHandler = new CustomerMessageHandlers(doc,null,maxRecordCount);
+                var messageHandler = new CustomMessageHandlers(doc,null,maxRecordCount);
                 messageHandler.Execute();
             }
             var weixinContext = MessageHandler<MessageContext<IRequestMessageBase, IResponseMessageBase>>.GlobalWeixinContext.MessageQueue.FirstOrDefault();

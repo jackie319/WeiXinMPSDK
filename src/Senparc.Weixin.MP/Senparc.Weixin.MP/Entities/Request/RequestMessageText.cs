@@ -1,7 +1,7 @@
 ﻿#region Apache License Version 2.0
 /*----------------------------------------------------------------
 
-Copyright 2017 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
+Copyright 2018 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
 except in compliance with the License. You may obtain a copy of the License at
@@ -19,7 +19,7 @@ Detail: https://github.com/JeffreySu/WeiXinMPSDK/blob/master/license.md
 #endregion Apache License Version 2.0
 
 /*----------------------------------------------------------------
-    Copyright (C) 2017 Senparc
+    Copyright (C) 2018 Senparc
     
     文件名：RequestMessageText.cs
     文件功能描述：接收普通文本消息
@@ -32,16 +32,21 @@ Detail: https://github.com/JeffreySu/WeiXinMPSDK/blob/master/license.md
 
     修改标识：Senparc - 20170422
     修改描述：添加IRequestMessageText接口
+    
+    修改标识：Senparc - 20180901
+    修改描述：支持 NeuChar
+
 ----------------------------------------------------------------*/
 
-using Senparc.Weixin.Entities.Request;
+using Senparc.NeuChar;
+using Senparc.NeuChar.Entities;
 
 namespace Senparc.Weixin.MP.Entities
 {
     /// <summary>
     /// 文本类型消息
     /// </summary>
-    public class RequestMessageText : RequestMessageBase, IRequestMessageBase, IRequestMessageText
+    public class RequestMessageText : RequestMessageBase, IRequestMessageText
     {
         public override RequestMsgType MsgType
         {
